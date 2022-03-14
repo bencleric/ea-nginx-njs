@@ -26,6 +26,8 @@ into your customer configurations.
 
 %build
 echo "TODO: build dynamic module using ea-nginx w/ --prefix=/etc/nginx --sbin-path=/usr/sbin/nginx etc"
+# nginx -V 2>&1| grep "configure arguments"| sed 's/configure arguments: //'
+# ./configure <^^^ configure flags sans other dynamic or static modules sourceballs> --add-dynamic-module=.
 
 %install
 mkdir -p %{buildroot}/etc/nginx/conf.d/modules
@@ -37,6 +39,8 @@ rm -rf %{buildroot}
 %files
 %defattr(0644,root,root,0755)
 /etc/nginx/conf.d/modules/ngx_njs_module.conf
+%attr(0755,root,root) %{_libdir}/nginx/modules/ngx_http_js_module.so
+%attr(0755,root,root) %{_libdir}/nginx/modules/ngx_stream_js_module.so
 
 %changelog
 * Thu Feb 24 2022 Daniel Muey <dan@cpanel.net> - 1.0-1
