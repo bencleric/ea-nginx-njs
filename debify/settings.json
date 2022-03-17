@@ -1,5 +1,6 @@
 {
    "override_vars" : {
-      "_libdir" : "/usr/lib64"
+      "_libdir" : "/usr/lib64",
+      "buildroot" : "/usr/src/packages/BUILD/debian/tmp"
    }
 }
