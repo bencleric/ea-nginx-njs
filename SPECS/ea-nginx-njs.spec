@@ -9,12 +9,8 @@ Group:          System Environment/Libraries
 URL:            http://www.cpanel.net
 Vendor:         cPanel, Inc.
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+
 BuildRequires:  ea-nginx-ngxdev
-
-%if 0%{?rhel} == 7
-BuildRequires: ea-openssl11
-%endif
-
 Requires:       ea-nginx
 
 Source0:        %{version}.tar.gz
